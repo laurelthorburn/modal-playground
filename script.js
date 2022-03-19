@@ -8,6 +8,9 @@ const btnsOpenModal = document.querySelectorAll('.show-modal');
 for (let i = 0; i < btnsOpenModal.length; i++) {
     btnsOpenModal[i].addEventListener('click', function(){
         console.log(`button ${[i]}: I've been clicked`)
+        //TODO: display modal, default is hidden in html
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
     })
 }
 
