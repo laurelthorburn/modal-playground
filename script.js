@@ -6,7 +6,6 @@ const btnCloseModal = document.querySelector('.close-modal');
 const btnsOpenModal = document.querySelectorAll('.show-modal');
 
 const openModal = function () {
-  console.log(`button ${[i]}: I've been clicked`);
   //TODO: display modal, default is hidden in html
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -23,3 +22,10 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+//listening for keypress event (esc), global event
+document.addEventListener('keydown',function(e){
+    //check if the esc key was clicked
+    if(e.key === "Escape" && !modal.classList.contains('hidden')){
+        closeModal();
+    }
+} )
